@@ -45,7 +45,7 @@ let questions = [
 // Question One
 let questionOne = questions[0];
 questionContent.innerText = questionOne.question;
-questionContent["data-current-question-index"] = 0;
+questionContent.setAttribute("data-current-question-index", 0);
 
 buttonOne.innerText = questionOne.answers[0];
 buttonTwo.innerText = questionOne.answers[1];
@@ -54,14 +54,18 @@ buttonFour.innerText = questionOne.answers[3];
 
 // On click event of a button and shows next question
 let buttonClickHandler = function (event) {
-  let nextQuestionIndex = questionContent["data-current-question-index"] + 1;
+  let nextQuestionIndex =
+    parseInt(questionContent.getAttribute("data-current-question-index")) + 1;
   if (nextQuestionIndex === questions.length) {
     alert("youre done baby");
     return;
   }
   let nextQuestion = questions[nextQuestionIndex];
   questionContent.innerText = nextQuestion.question;
-  questionContent["data-current-question-index"] = nextQuestionIndex;
+  questionContent.setAttribute(
+    "data-current-question-index",
+    nextQuestionIndex
+  );
 
   buttonOne.innerText = nextQuestion.answers[0];
   buttonTwo.innerText = nextQuestion.answers[1];
@@ -69,5 +73,7 @@ let buttonClickHandler = function (event) {
   buttonFour.innerText = nextQuestion.answers[3];
 };
 
-document.querySelector("#answers").addEventListener("click", buttonClickHandler);
+document
+  .querySelector("#answers")
+  .addEventListener("click", buttonClickHandler);
 // Timer
