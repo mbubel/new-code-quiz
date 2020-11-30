@@ -53,7 +53,7 @@ buttonThree.innerText = questionOne.answers[2];
 buttonFour.innerText = questionOne.answers[3];
 
 // On click event of a button and shows next question
-let buttonClickHandler = function () {
+let buttonClickHandler = function (event) {
   let nextQuestionIndex = questionContent["data-current-question-index"] + 1;
   if (nextQuestionIndex === questions.length) {
     alert("youre done baby");
@@ -69,9 +69,5 @@ let buttonClickHandler = function () {
   buttonFour.innerText = nextQuestion.answers[3];
 };
 
-buttonOne.addEventListener("click", buttonClickHandler);
-buttonTwo.addEventListener("click", buttonClickHandler);
-buttonThree.addEventListener("click", buttonClickHandler);
-buttonFour.addEventListener("click", buttonClickHandler);
-
+document.querySelector("#answers").addEventListener("click", buttonClickHandler);
 // Timer
