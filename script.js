@@ -4,6 +4,7 @@ let buttonTwo = document.querySelector("#button2");
 let buttonThree = document.querySelector("#button3");
 let buttonFour = document.querySelector("#button4");
 let questionContent = document.querySelector("#questionContent");
+let answerValidity = document.querySelector("#lastAnswerValidity");
 let questions = [
   {
     question: "What was Tracer's occupation prior to joining Overwatch?",
@@ -42,7 +43,7 @@ let questions = [
   },
 ];
 
-// Question One
+// Questions
 let questionOne = questions[0];
 questionContent.innerText = questionOne.question;
 questionContent.setAttribute("data-current-question-index", 0);
@@ -60,9 +61,9 @@ let buttonClickHandler = function (event) {
   let suppliedAnswerIndex = parseInt(event.target.getAttribute("data-index"));
   let correctAnswerIndex = questions[currentQuestionIndex].correctAnswerIndex;
   if (suppliedAnswerIndex === correctAnswerIndex) {
-    alert("Wiggity");
+    answerValidity.innerText = "Correct";
   } else {
-    alert("Not wiggity");
+    answerValidity.innerText = "Incorrect";
   }
   let nextQuestionIndex = currentQuestionIndex + 1;
   if (nextQuestionIndex === questions.length) {
