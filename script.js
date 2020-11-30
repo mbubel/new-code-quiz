@@ -54,8 +54,17 @@ buttonFour.innerText = questionOne.answers[3];
 
 // On click event of a button and shows next question
 let buttonClickHandler = function (event) {
-  let nextQuestionIndex =
-    parseInt(questionContent.getAttribute("data-current-question-index")) + 1;
+  let currentQuestionIndex = parseInt(
+    questionContent.getAttribute("data-current-question-index")
+  );
+  let suppliedAnswerIndex = parseInt(event.target.getAttribute("data-index"));
+  let correctAnswerIndex = questions[currentQuestionIndex].correctAnswerIndex;
+  if (suppliedAnswerIndex === correctAnswerIndex) {
+    alert("Wiggity");
+  } else {
+    alert("Not wiggity");
+  }
+  let nextQuestionIndex = currentQuestionIndex + 1;
   if (nextQuestionIndex === questions.length) {
     alert("youre done baby");
     return;
