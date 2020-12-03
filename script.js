@@ -1,15 +1,21 @@
 // Target Start quiz button
-let startBtn = document.getElementById("startQuiz"); 
-let startPrompt = document.getElementById("startingPrompt"); 
-let quizQuestions = document.getElementById("quiz-questions");  
+let startBtn = document.getElementById("startQuiz");
+let startPrompt = document.getElementById("startingPrompt");
+let quizQuestions = document.getElementById("quiz-questions");
+let highScores = document.getElementById("highscore");
 
-function toggleDiv(div) {
-  div.style.display = div.style.display == "none" ? "block" : "none";
+function showDiv(div) {
+  div.style.display = "block";
 }
 
-startBtn.addEventListener("click", function(){
-  toggleDiv(quizQuestions);
-  toggleDiv(startPrompt); 
+function hideDiv(div) {
+  div.style.display = "none";
+}
+
+startBtn.addEventListener("click", function () {
+  showDiv(quizQuestions);
+  hideDiv(startPrompt);
+  hideDiv(highScores);
 });
 
 // Questions and buttons
