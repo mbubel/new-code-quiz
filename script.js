@@ -4,6 +4,8 @@ let startPrompt = document.getElementById("startingPrompt");
 let quizQuestions = document.getElementById("quiz-questions");
 let highScores = document.getElementById("highscore");
 let timer = document.getElementById("time-left");
+let counter = 120;
+
 
 function showDiv(div) {
   div.style.display = "block";
@@ -17,13 +19,13 @@ startBtn.addEventListener("click", function () {
   showDiv(quizQuestions);
   hideDiv(startPrompt);
   hideDiv(highScores);
-  var counter = 120;
+  counter = 120;
   setInterval(function () {
     counter--;
     if (counter >= 0) {
       timer.innerHTML = counter + " seconds";
     }
-    if (counter === 0) {
+    if (counter <= 0) {
       alert("sorry, out of time"); // todo: be less lame
       clearInterval(counter);
     }
@@ -96,6 +98,7 @@ let buttonClickHandler = function (event) {
     answerValidity.innerText = "Correct";
   } else {
     answerValidity.innerText = "Incorrect";
+    counter -= 5;
   }
   let nextQuestionIndex = currentQuestionIndex + 1;
   if (nextQuestionIndex === questions.length) {
