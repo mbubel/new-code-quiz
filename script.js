@@ -1,7 +1,16 @@
 // Target Start quiz button
-let startBtn = document.getElementById("startQuiz");  
+let startBtn = document.getElementById("startQuiz"); 
+let startPrompt = document.getElementById("startingPrompt"); 
+let quizQuestions = document.getElementById("quiz-questions");  
 
+function toggleDiv(div) {
+  div.style.display = div.style.display == "none" ? "block" : "none";
+}
 
+startBtn.addEventListener("click", function(){
+  toggleDiv(quizQuestions);
+  toggleDiv(startPrompt); 
+});
 
 // Questions and buttons
 let buttonOne = document.getElementById("button1");
