@@ -3,6 +3,7 @@ let startBtn = document.getElementById("startQuiz");
 let startPrompt = document.getElementById("startingPrompt");
 let quizQuestions = document.getElementById("quiz-questions");
 let highScores = document.getElementById("highscore");
+let timer = document.getElementById("time-left");
 
 function showDiv(div) {
   div.style.display = "block";
@@ -16,6 +17,17 @@ startBtn.addEventListener("click", function () {
   showDiv(quizQuestions);
   hideDiv(startPrompt);
   hideDiv(highScores);
+  var counter = 120;
+  setInterval(function () {
+    counter--;
+    if (counter >= 0) {
+      timer.innerHTML = counter + " seconds";
+    }
+    if (counter === 0) {
+      alert("sorry, out of time"); // todo: be less lame
+      clearInterval(counter);
+    }
+  }, 1000);
 });
 
 // Questions and buttons
