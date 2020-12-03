@@ -1,10 +1,15 @@
+// Target Start quiz button
+let startBtn = document.getElementById("startQuiz");  
+
+
+
 // Questions and buttons
-let buttonOne = document.querySelector("#button1");
-let buttonTwo = document.querySelector("#button2");
-let buttonThree = document.querySelector("#button3");
-let buttonFour = document.querySelector("#button4");
-let questionContent = document.querySelector("#questionContent");
-let answerValidity = document.querySelector("#lastAnswerValidity");
+let buttonOne = document.getElementById("button1");
+let buttonTwo = document.getElementById("button2");
+let buttonThree = document.getElementById("button3");
+let buttonFour = document.getElementById("button4");
+let questionContent = document.getElementById("questionContent");
+let answerValidity = document.getElementById("lastAnswerValidity");
 let questions = [
   {
     question: "What was Tracer's occupation prior to joining Overwatch?",
@@ -86,4 +91,6 @@ let buttonClickHandler = function (event) {
 document
   .querySelector("#answers")
   .addEventListener("click", buttonClickHandler);
-// Timer
+// 1//   window.location.href = "index.html";
+// });
+// clearScores.addEventListener("click", clearScoreList);

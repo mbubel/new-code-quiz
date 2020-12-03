@@ -13,13 +13,22 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
   </head>
   <body>
-    <!-- Timer -->
+    <!-- Timer and Highscores Link -->
     <nav class="navbar navbar-light bg-light">
+      <a href="highscore.html">View Highscores</a>
       <div class="ml-auto">Time: <span id="time-left">120 seconds</span></div>
     </nav>
-    <!-- Questions appear here-->
-    <div class="card-body" id="quiz-questions">
+    <!-- Title-->
+    <div class="center">
       <h2>Overwatch Quiz Challenge</h2>
+    </div>
+    <!-- Starting prompt -->
+    <div class="card-body center" id="startingPrompt" style="display: block;">
+      <p>This is your Overwatch Quiz Challenge. You will have 2 minutes to complete the quiz. For every wrong answer, you will have 5 seconds subtracted from your total time. At the end of the quiz, you will add your highscore. Enjoy and goodluck! And remember, the world could always use more heroes.</p>
+      <button class="btn btn-sm btn-primary" id="startQuiz">Start Quiz</button>
+    </div>
+    <!-- Questions appear here-->
+    <div class="card-body center" id="quiz-questions" style="display: none;">
       <div>
         <p id="questionContent"></p>
       </div>
@@ -61,7 +70,18 @@
         <p id="lastAnswerValidity"></p>
       </div>
     </div>
-
+    <!-- Highscore start -->
+    <div class="card-body center" id="highscore" style="display: none;">
+      <h2>Highscores</h2>
+      <!-- High scores will go here -->
+      <div id="scoreboard">
+        <h1>Hello World</h1>
+        <button class="btn btn-sm btn-primary" id="backBtn">Back</button>
+        <button class="btn btn-sm btn-primary" id="clearHighScore">
+          Clear Highscore
+        </button>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

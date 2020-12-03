@@ -1,7 +1,12 @@
-#quiz-questions {
+.center{
     text-align: center;
 }
 
 button {
     margin-top: 5px;
+}
+
+p {
+    margin-left: 30%;
+    margin-right: 30%;
 }
