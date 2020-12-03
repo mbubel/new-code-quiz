@@ -20,14 +20,14 @@ startBtn.addEventListener("click", function () {
   hideDiv(startPrompt);
   hideDiv(highScores);
   counter = 120;
-  setInterval(function () {
+  let handle = setInterval(function () {
     counter--;
     if (counter >= 0) {
       timer.innerHTML = counter + " seconds";
     }
     if (counter <= 0) {
       alert("sorry, out of time"); // todo: be less lame
-      clearInterval(counter);
+      clearInterval(handle);
     }
   }, 1000);
 });
@@ -98,7 +98,7 @@ let buttonClickHandler = function (event) {
     answerValidity.innerText = "Correct";
   } else {
     answerValidity.innerText = "Incorrect";
-    counter -= 5;
+    counter -= 10;
   }
   let nextQuestionIndex = currentQuestionIndex + 1;
   if (nextQuestionIndex === questions.length) {
